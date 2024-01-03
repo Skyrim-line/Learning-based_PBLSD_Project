@@ -1,0 +1,13 @@
+Sub 合并()
+Application.ScreenUpdating = False
+For j = 1 To Sheets.Count
+If Sheets(j).Name <> ActiveSheet.Name Then
+X = Range("A60000").End(xlUp).Row + 1
+Sheets(j).UsedRange.Copy Cells(X, 1)
+End If
+Next
+Range("B1").Select
+Application.ScreenUpdating = True
+MsgBox "小主，数据合并结束啦！", vbInformation, "提示"
+
+End Sub
